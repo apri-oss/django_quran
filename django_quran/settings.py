@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-s8n&9i9kzjzv27@!df(d-psrow_ot-1gq2-7kir!9@evk4%hp9
 DEBUG = True
 
 ALLOWED_HOSTS = []
+STATIC_ROOT = BASE_DIR / 'homepages'
+
+STATIC_URL = 'static/'
 
 
 # Application definition
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     'surats.apps.SuratsConfig',
      # ayats application 
     'ayats.apps.AyatsConfig',
+    'homepages.apps.HomepagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,13 +65,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 ROOT_URLCONF = 'django_quran.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/homepages/templates',],     
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

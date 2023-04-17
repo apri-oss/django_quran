@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quran Rest API</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="wrapper_con">
+    <div class="header_con"></div>
+
+    <div class="body_con">
+      <div class="body_left"></div>
+      <div class="body_center">
+        <h1>Quran API Documentation</h1>
+        <br>
+        <p>Berikut ini adalah beberapa endpoint yang bisa digunakan untuk development al-quran online. Untuk mengakses endpoint berikut gunakan HTTP GET method dan response berupa JSON. </p>
+        <br><br>
+        <div class="collapsible">
+          <p>GET - API Surat </p>
+        </div>
+        <div class="content">
+          <br>
+          <p>API</p>
+          <a href="http://kyukyuk12.pythonanywhere.com/api/surats">http://kyukyuk12.pythonanywhere.com/api/surats</a>
+          <br>
+          <br>
+        </div>
+        <div class="collapsible">
+          <p>GET - API Ayat </p>
+        </div>
+        <div class="content">
+          <br>
+          <p>API</p>
+          <a href="http://kyukyuk12.pythonanywhere.com/api/surats/1">http://kyukyuk12.pythonanywhere.com/api/surats/1</a>          
+          <br>
+        </div>
+      </div> 
+      <div class="body_right"></div>   
+    </div>
+    <div class="footer_con"></div>
+  </div>
+
+  <!-- function collapsible -->
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+    
+</body>
+</html>
